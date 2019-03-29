@@ -1,0 +1,40 @@
+@import "./common/base.less";
+
+.weixin-loading {
+  min-width: 100*@baserem;
+  min-height: 100*@baserem;
+  max-width: 300*@baserem;
+  max-height: 300*@baserem;
+  padding: 20*@baserem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 999;
+  transform: translate(-50%,-50%);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  text-align: center;
+
+  .weixin-loading__icon {
+    display: block;
+    font-size: 30*@baserem;
+    animation: weixin-loading 2s linear infinite;
+  }
+
+  .weixin-loading__title {
+    font-size: 16*@baserem;
+  }
+}
+
+@keyframes weixin-loading {
+  from {
+    transform: rotate(0deg);
+    transform-origin: center;
+  }
+
+  to {
+    transform-origin: center;
+    transform: rotate(360deg);
+  }
+
+}

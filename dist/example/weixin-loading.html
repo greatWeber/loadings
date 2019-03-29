@@ -4,17 +4,36 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <title>仿微信加载样式</title>
-    <link rel="stylesheet" href="../css/common/header.css">
+    <link rel="stylesheet" href="../css/common/example.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1114261_ncbz1vc9qf.css">
+    <link rel="stylesheet" href="../css/weixin_loading.css">
+
+
 
     <script src="../../plugins/flexible.js"></script>
     <script src="../../plugins/vue2.6.10.js"></script>
   </head>
   <body>
-  <header class="header">
-    <p class="back">
-      <i class="loadback"></i>
-    </p>
-    <h1 class="title">仿微信加载样式</h1>
-  </header>
+  <section id="loading">
+    <load-head title="仿微信加载样式"></load-head>
+
+    <h2 class="line">纯样式展示:</h2>
+    <div class="weixin-loading flex flex-colmun align-center">
+      <p class=" flex-item flex align-center">
+        <span class="weixin-loading__icon iconfont load-jiazaizhong"></span>
+      </p>
+      <p class="weixin-loading__title flex-item flex align-center">
+        <span>加载中...</span>
+      </p>
+    </div>
+  </section>
   </body>
+
+  <script src="./components/header.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#loading',
+      data: {}
+    })
+  </script>
 </html>
