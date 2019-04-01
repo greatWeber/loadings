@@ -17,46 +17,65 @@
   <section id="loading">
     <load-head title="仿微信加载样式"></load-head>
 
-    <h2 class="line">纯样式展示:</h2>
-    <div class="weixin-loading flex flex-colmun align-center">
-      <!-- <p class=" flex-item flex align-center">
-        <span class="weixin-loading__icon iconfont load-jiazaizhong"></span>
-      </p> -->
-      <div class=" flex-item flex align-center">
-        <div class="weixin-loading__wrapper">
-          <p class="weixin-loading-p weixin-loading-p_1"></p>
-          <p class="weixin-loading-p weixin-loading-p_2"></p>
-          <p class="weixin-loading-p weixin-loading-p_3"></p>
-          <p class="weixin-loading-p weixin-loading-p_4"></p>
-          <p class="weixin-loading-p weixin-loading-p_5"></p>
-          <p class="weixin-loading-p weixin-loading-p_6"></p>
-          <p class="weixin-loading-p weixin-loading-p_7"></p>
-          <p class="weixin-loading-p weixin-loading-p_8"></p>
-          <p class="weixin-loading-p weixin-loading-p_9"></p>
-          <p class="weixin-loading-p weixin-loading-p_10"></p>
-          <p class="weixin-loading-p weixin-loading-p_11"></p>
-          <p class="weixin-loading-p weixin-loading-p_12"></p>
+    <h2 class="line" @click="change(1)">纯样式展示:</h2>
+    <div class="content" v-show="index==1">
+      <div class="weixin-loading flex flex-colmun align-center">
+        <div class=" flex-item flex align-center">
+          <div class="weixin-loading__wrapper">
+            <p class="weixin-loading-p weixin-loading-p_1"></p>
+            <p class="weixin-loading-p weixin-loading-p_2"></p>
+            <p class="weixin-loading-p weixin-loading-p_3"></p>
+            <p class="weixin-loading-p weixin-loading-p_4"></p>
+            <p class="weixin-loading-p weixin-loading-p_5"></p>
+            <p class="weixin-loading-p weixin-loading-p_6"></p>
+            <p class="weixin-loading-p weixin-loading-p_7"></p>
+            <p class="weixin-loading-p weixin-loading-p_8"></p>
+            <p class="weixin-loading-p weixin-loading-p_9"></p>
+            <p class="weixin-loading-p weixin-loading-p_10"></p>
+            <p class="weixin-loading-p weixin-loading-p_11"></p>
+            <p class="weixin-loading-p weixin-loading-p_12"></p>
+          </div>
         </div>
+        <p class="weixin-loading__title flex-item flex align-center">
+          <span>加载中...</span>
+        </p>
       </div>
-      <p class="weixin-loading__title flex-item flex align-center">
-        <span>加载中...</span>
-      </p>
+
     </div>
+    <!--
+      ——————————————————————————————————我是分割线——————————————————————————————————
+     -->
+     <h2 class="line" @click="change(2)">js调用:</h2>
+     <div class="content" v-show="index==2">
+        <load-btn value="js调用" @btn="showLoad"></load-btn>
+     </div>
   </section>
   </body>
 
   <script src="./components/header.js"></script>
+  <script src="./components/btn.js"></script>
   <script src="../es6/ajax.js"></script>
   <script>
     var vm = new Vue({
       el: '#loading',
-      data: {},
+      data: {
+        index: 0
+      },
       created(){
           console.log('created')
 
         },
       methods: {
+        change(i){
+          if(this.index==i){
+            this.index = 0;
+          }else{
+            this.index = i;
+          }
+        },
+        showLoad(){
 
+        }
       }
     })
   </script>
