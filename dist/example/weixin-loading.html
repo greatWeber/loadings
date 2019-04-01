@@ -30,10 +30,24 @@
   </body>
 
   <script src="./components/header.js"></script>
+  <script src="../es6/ajax.js"></script>
   <script>
     var vm = new Vue({
       el: '#loading',
-      data: {}
+      data: {},
+      created(){
+          console.log('created')
+          this.getData()
+      },
+      methods: {
+          getData(){
+              Ajax({
+                url: 'https://github.com/greatWeber/loadings/blob/master/README.md'
+              }).then(data=>{
+                console.log(data)
+              }) 
+          }
+      }
     })
   </script>
 </html>
