@@ -19,9 +19,25 @@
 
     <h2 class="line">纯样式展示:</h2>
     <div class="weixin-loading flex flex-colmun align-center">
-      <p class=" flex-item flex align-center">
+      <!-- <p class=" flex-item flex align-center">
         <span class="weixin-loading__icon iconfont load-jiazaizhong"></span>
-      </p>
+      </p> -->
+      <div class=" flex-item flex align-center">
+        <div class="weixin-loading__wrapper">
+          <p class="weixin-loading-p weixin-loading-p_1"></p>
+          <p class="weixin-loading-p weixin-loading-p_2"></p>
+          <p class="weixin-loading-p weixin-loading-p_3"></p>
+          <p class="weixin-loading-p weixin-loading-p_4"></p>
+          <p class="weixin-loading-p weixin-loading-p_5"></p>
+          <p class="weixin-loading-p weixin-loading-p_6"></p>
+          <p class="weixin-loading-p weixin-loading-p_7"></p>
+          <p class="weixin-loading-p weixin-loading-p_8"></p>
+          <p class="weixin-loading-p weixin-loading-p_9"></p>
+          <p class="weixin-loading-p weixin-loading-p_10"></p>
+          <p class="weixin-loading-p weixin-loading-p_11"></p>
+          <p class="weixin-loading-p weixin-loading-p_12"></p>
+        </div>
+      </div>
       <p class="weixin-loading__title flex-item flex align-center">
         <span>加载中...</span>
       </p>
@@ -37,16 +53,10 @@
       data: {},
       created(){
           console.log('created')
-          this.getData()
-      },
+
+        },
       methods: {
-          getData(){
-              Ajax({
-                url: 'https://github.com/greatWeber/loadings/blob/master/README.md'
-              }).then(data=>{
-                console.log(data)
-              }) 
-          }
+
       }
     })
   </script>

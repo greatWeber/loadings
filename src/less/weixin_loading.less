@@ -24,7 +24,71 @@
   .weixin-loading__title {
     font-size: 16*@baserem;
   }
+
+  .weixin-loading__wrapper {
+    position: relative;
+    left: 50%;
+    height: 50%;
+    width: 0;
+  }
+
+  .weixin-loading-p {
+    position: absolute;
+    top: -5*@baserem;
+    left: 0;
+    width: 2px;
+    height: 10*@baserem;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.25;
+    transform-origin: left  18*@baserem;
+  }
+
+  .loop(@counter) when(@counter<=12){
+    .loop(@counter+1);
+    @animation: ~"1s linear 0s infinite weixin-loading_@{counter}";
+    .weixin-loading-p_@{counter} {
+      @deg: (@counter - 1)*30deg;
+      transform: rotate(@deg);
+      animation: @animation;
+    }
+  }
+
+  .loop(1);
 }
+
+.loop(@counter) when(@counter<=12){
+  .loop(@counter+1);
+  @name : ~" weixin-loading_@{counter}";
+  @data1 : @counter*(1/13)*100% ;
+  @data2 : (1-@counter*(1/13))*100% ;
+  @data3 : @counter*(1/13)*100%-0.01 ;
+
+  @opacity: @counter*(1/13);
+  @keyframes @name {
+    0% {
+      opacity: @opacity;
+    }
+
+    @{data3} {
+      opacity: 0.25;
+    }
+    @{data1} {
+      opacity: 1;
+    }
+
+    @{data2} {
+      opacity: 0.25;
+    }
+
+
+    100% {
+      opacity: @opacity;
+    }
+  }
+}
+
+.loop(1);
 
 @keyframes weixin-loading {
   from {
