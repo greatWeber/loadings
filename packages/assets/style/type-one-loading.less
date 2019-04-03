@@ -1,0 +1,122 @@
+@import "./common/base.less";
+
+.type-one-loading {
+  min-width: 100*@baserem;
+  min-height: 100*@baserem;
+  max-width: 300*@baserem;
+  max-height: 300*@baserem;
+  padding: 20*@baserem;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 999;
+  transform: translate(-50%,-50%);
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  text-align: center;
+
+  .type-one-loading__title {
+    font-size: 16*@baserem;
+  }
+
+  .type-one-loading__wrapper {
+      position: absolute;
+      width: 100%;
+      font-size: 0;
+      transform: translate(-50%,-50%);
+
+      &:nth-last-child {
+        min-height: 0;
+      }
+  }
+
+  .type-one-loading-p {
+    display: inline-block;
+    width: 5*@baserem;
+    background: #fff;
+    border-radius: 5*@baserem;
+    margin-right: 5*@baserem;
+    transition: all 0.3s linear;
+  }
+
+
+  .loopLeft(@counter) when(@counter<=5){
+    .loopLeft(@counter+1);
+    @animation: ~"1s linear infinite type-one-loading_@{counter}";
+    .type-one-loading-p_@{counter} {
+      @height: @counter*5 + 10;
+      height: @height*@baserem;
+      transform: translateY(@height/2*@baserem);
+      animation: @animation;
+      animation-delay: unit((@counter - 1)*(1/9),s)
+    }
+  }
+
+  .loopLeft(1);
+
+  .loopRight(@counter) when(@counter<=9){
+    .loopRight(@counter+1);
+    @animation: ~"1s linear infinite type-one-loading_@{counter}";
+    .type-one-loading-p_@{counter} {
+      @height: (9-@counter+1)*5 + 10;
+      height: @height*@baserem;
+      transform: translateY(@height/2*@baserem);
+      animation: @animation;
+      animation-delay: unit((@counter - 1)*(1/9),s)
+    }
+  }
+
+  .loopRight(6);
+
+}
+
+.animationLeft(@counter) when(@counter<=5){
+  .animationLeft(@counter+1);
+  @name : ~" type-one-loading_@{counter}";
+
+  @keyframes @name {
+    0% {
+      height: (@counter*5 + 10)*@baserem;
+      transform: translateY((@counter*5 + 10)/2*@baserem);
+    }
+
+  50% {
+    height: (@counter*15 + 10)*@baserem;
+    transform: translateY((@counter*15 + 10)/2*@baserem);
+  }
+
+
+    100% {
+      height: (@counter*5 + 10)*@baserem;
+      transform: translateY((@counter*5 + 10)/2*@baserem);
+    }
+  }
+}
+
+.animationLeft(1);
+
+
+.animationRight(@counter) when(@counter<=9){
+  .animationRight(@counter+1);
+  @name : ~" type-one-loading_@{counter}";
+
+  @keyframes @name {
+    0% {
+      height: ((9-@counter+1)*5 + 10)*@baserem;
+      transform: translateY(((9-@counter+1)*5 + 10)/2*@baserem);
+    }
+
+  50% {
+    height: ((9-@counter+1)*15 + 10)*@baserem;
+    transform: translateY(((9-@counter+1)*15 + 10)/2*@baserem);
+  }
+
+
+    100% {
+      height: ((9-@counter+1)*5 + 10)*@baserem;
+      transform: translateY(((9-@counter+1)*5 + 10)/2*@baserem);
+    }
+  }
+}
+
+.animationRight(6);

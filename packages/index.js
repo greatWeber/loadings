@@ -2,11 +2,13 @@ import Loading from '../static/loading.js';
 
 
 import weixinLoading from './components/weixin-loading';
+import typeOneLoading from './components/type-one-loading';
 
 
 
 const components = [
-  weixinLoading
+  weixinLoading,
+  typeOneLoading
 
 ];
 
@@ -18,7 +20,7 @@ const install = (Vue, config={}) => {
   let loading = new Loading();
 
   Vue.prototype.$loading = loading;
-  
+
   components.map((component) => {
     Vue.component(component.name,component);
     return component;
@@ -32,11 +34,13 @@ if (typeof window !== 'undefined' && window.Vue) {
 const LOADING = {
   version,
   install,
-  weixinLoading
+  weixinLoading,
+  typeOneLoading
 };
 
 export default LOADING;
 
 export {
   weixinLoading,
+  typeOneLoading,
 }
