@@ -6,6 +6,15 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'index',
+      meta:{
+        title:'首页'
+      },
+      component: () =>
+        import ('@ex/components/index')
+    },
+    {
       path: '/weixin-loading',
       name: 'weixin-loading',
       meta:{
