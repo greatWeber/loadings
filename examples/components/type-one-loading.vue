@@ -3,7 +3,7 @@
     <load-head title="加载样式-01"></load-head>
 
     <h2 class="line" @click="change(1)">纯样式展示:</h2>
-    <div class="content" v-if="index==1">
+    <div class="content" v-if="index==1" ref="code">
       <div class="type-one-loading flex flex-colmun align-center">
         <div class=" flex-item flex align-center">
           <div class="type-one-loading__wrapper">
@@ -21,6 +21,11 @@
         <p class="type-one-loading__title flex-item flex align-center">
           <span class="common-loading__span">加载中...</span>
         </p>
+      </div>
+
+      <div class="codebox-wrapper">
+        <textarea id="code" class="codebox" readonly :value="code"></textarea>
+        <span class="copy" data-clipboard-target="#code">copy</span>
       </div>
 
     </div>
@@ -58,6 +63,8 @@
 <script>
 import loadHead from './common/header.vue';
 import loadBtn from './common/btn.vue';
+
+import ClipboardJS from 'clipboard';
 export default {
   components: {
     loadHead,
@@ -65,9 +72,14 @@ export default {
   },
   data(){
     return {
-      index: 0,
-      show: false
+      index: 1,
+      show: false,
+      code: ''
     }
+  },
+  mounted(){
+    this.code = this.$refs.code.innerHTML;
+    new ClipboardJS('.copy');
   },
   methods: {
     change(i){

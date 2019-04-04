@@ -3,7 +3,7 @@
     <load-head title="仿微信加载样式"></load-head>
 
     <h2 class="line" @click="change(1)">纯样式展示:</h2>
-    <div class="content" v-if="index==1">
+    <div class="content" v-if="index==1" ref="code">
       <div class="weixin-loading flex flex-colmun align-center">
         <div class=" flex-item flex align-center">
           <div class="weixin-loading__wrapper">
@@ -26,6 +26,10 @@
         </p>
       </div>
 
+        <div class="codebox-wrapper">
+          <textarea id="code" class="codebox" readonly :value="code"></textarea>
+          <span class="copy" data-clipboard-target="#code">copy</span>
+        </div>
     </div>
     <!--
       ——————————————————————————————————我是分割线——————————————————————————————————
@@ -61,6 +65,8 @@
 <script>
 import loadHead from './common/header.vue';
 import loadBtn from './common/btn.vue';
+
+import ClipboardJS from 'clipboard';
 export default {
   components: {
     loadHead,
@@ -68,9 +74,14 @@ export default {
   },
   data(){
     return {
-      index: 0,
-      show: false
+      index: 1,
+      show: false,
+      code: ''
     }
+  },
+  mounted(){
+    this.code = this.$refs.code.innerHTML;
+    new ClipboardJS('.copy');
   },
   methods: {
     change(i){
