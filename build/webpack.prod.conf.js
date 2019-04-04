@@ -24,7 +24,7 @@ const webpackConfig = merge(baseWebpackConfig, {
   devtool: config.build.productionSourceMap ? config.build.devtool : false,
   output: {
     path: config.build.assetsRoot,
-    publicPath: 'https://greatweber.github.io/loadings/dist',
+    publicPath: 'https://greatweber.github.io/loadings/dist/',
     filename: utils.assetsPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
