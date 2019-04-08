@@ -28,6 +28,11 @@
         <span class="copy" data-clipboard-target="#code">copy</span>
       </div>
 
+      <!-- css链接 -->
+      <a href="https://raw.githubusercontent.com/greatWeber/loadings/master/lib/style/type-one-loading.css" target="_blank">
+        css链接
+      </a>
+
     </div>
     <!--
       ——————————————————————————————————我是分割线——————————————————————————————————
