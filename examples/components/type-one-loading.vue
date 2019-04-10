@@ -23,15 +23,26 @@
         </p>
       </div>
 
+      <!-- 拷贝 -->
       <div class="codebox-wrapper">
         <textarea id="code" class="codebox" readonly :value="code"></textarea>
         <span class="copy" data-clipboard-target="#code">copy</span>
       </div>
 
-      <!-- css链接 -->
-      <a href="https://raw.githubusercontent.com/greatWeber/loadings/master/lib/style/type-one-loading.css" target="_blank">
-        css链接
-      </a>
+      <div class="link-wrapper flex ">
+        <!-- css链接 -->
+        <a class="flex-item" href="https://raw.githubusercontent.com/greatWeber/loadings/master/lib/style/type-one-loading.css" target="_blank">
+          css链接
+        </a>
+        <a class="flex-item" href="https://raw.githubusercontent.com/greatWeber/loadings/master/packages/assets/style/type-one-loading.less" target="_blank">
+          less链接
+        </a>
+      </div>
+
+      <!-- 提示 -->
+      <div class="tip-wrapper">
+        <span>提示: 点击 '纯样式展示' 标题可切换导航条哦^*^</span>
+      </div>
 
     </div>
     <!--
