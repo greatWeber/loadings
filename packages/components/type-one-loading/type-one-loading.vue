@@ -14,7 +14,7 @@
       </div>
     </div>
     <p class="type-one-loading__title flex-item flex align-center">
-      <span class="common-loading__span">加载中...</span>
+      <span class="common-loading__span">{{title}}</span>
     </p>
   </div>
 </template>

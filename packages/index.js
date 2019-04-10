@@ -3,12 +3,14 @@ import Loading from '../static/loading.js';
 
 import weixinLoading from './components/weixin-loading';
 import typeOneLoading from './components/type-one-loading';
+import typeTwoLoading from './components/type-two-loading';
 
 
 
 const components = [
   weixinLoading,
-  typeOneLoading
+  typeOneLoading,
+  typeTwoLoading,
 
 ];
 
@@ -35,7 +37,8 @@ const LOADING = {
   version,
   install,
   weixinLoading,
-  typeOneLoading
+  typeOneLoading,
+  typeTwoLoading
 };
 
 export default LOADING;
@@ -43,4 +46,5 @@ export default LOADING;
 export {
   weixinLoading,
   typeOneLoading,
+  typeTwoLoading
 }

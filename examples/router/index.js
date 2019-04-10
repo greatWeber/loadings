@@ -32,6 +32,15 @@ export default new Router({
       },
       component: () =>
         import ('@ex/components/type-one-loading')
+    },
+    {
+      path: '/type-two-loading',
+      name: 'type-two-loading',
+      meta:{
+        title:'加载样式-02'
+      },
+      component: () =>
+        import ('@ex/components/type-two-loading')
     }
   ]
 })
