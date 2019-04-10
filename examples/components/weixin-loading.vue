@@ -26,10 +26,15 @@
         </p>
       </div>
 
-        <div class="codebox-wrapper">
-          <textarea id="code" class="codebox" readonly :value="code"></textarea>
-          <span class="copy" data-clipboard-target="#code">copy</span>
-        </div>
+      <!-- 拷贝 -->
+      <load-copy :value="code"></load-copy>
+
+      <!-- 链接 -->
+      <load-links :css="css" :less="less"></load-links>
+
+      <!-- 提示 -->
+      <load-tip></load-tip>
+
     </div>
     <!--
       ——————————————————————————————————我是分割线——————————————————————————————————
@@ -65,18 +70,26 @@
 <script>
 import loadHead from './common/header.vue';
 import loadBtn from './common/btn.vue';
+import loadCopy from './common/copy.vue';
+import loadLinks from './common/links.vue';
+import loadTip from './common/tip.vue';
 
 import ClipboardJS from 'clipboard';
 export default {
   components: {
     loadHead,
-    loadBtn
+    loadBtn,
+    loadCopy,
+    loadLinks,
+    loadTip
   },
   data(){
     return {
       index: 1,
       show: false,
-      code: ''
+      code: '',
+      css: 'https://raw.githubusercontent.com/greatWeber/loadings/master/lib/style/weixin-loading.css',
+      less: 'https://raw.githubusercontent.com/greatWeber/loadings/master/packages/assets/style/weixin-loading.less',
     }
   },
   mounted(){

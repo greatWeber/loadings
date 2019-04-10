@@ -24,25 +24,13 @@
       </div>
 
       <!-- 拷贝 -->
-      <div class="codebox-wrapper">
-        <textarea id="code" class="codebox" readonly :value="code"></textarea>
-        <span class="copy" data-clipboard-target="#code">copy</span>
-      </div>
+      <load-copy :value="code"></load-copy>
 
-      <div class="link-wrapper flex ">
-        <!-- css链接 -->
-        <a class="flex-item" href="https://raw.githubusercontent.com/greatWeber/loadings/master/lib/style/type-one-loading.css" target="_blank">
-          css链接
-        </a>
-        <a class="flex-item" href="https://raw.githubusercontent.com/greatWeber/loadings/master/packages/assets/style/type-one-loading.less" target="_blank">
-          less链接
-        </a>
-      </div>
+      <!-- 链接 -->
+      <load-links :css="css" :less="less"></load-links>
 
       <!-- 提示 -->
-      <div class="tip-wrapper">
-        <span>提示: 点击 '纯样式展示' 标题可切换导航条哦^*^</span>
-      </div>
+      <load-tip></load-tip>
 
     </div>
     <!--
@@ -79,18 +67,26 @@
 <script>
 import loadHead from './common/header.vue';
 import loadBtn from './common/btn.vue';
+import loadCopy from './common/copy.vue';
+import loadLinks from './common/links.vue';
+import loadTip from './common/tip.vue';
 
 import ClipboardJS from 'clipboard';
 export default {
   components: {
     loadHead,
-    loadBtn
+    loadBtn,
+    loadCopy,
+    loadLinks,
+    loadTip
   },
   data(){
     return {
       index: 1,
       show: false,
-      code: ''
+      code: '',
+      css: 'https://raw.githubusercontent.com/greatWeber/loadings/master/lib/style/type-one-loading.css',
+      less: 'https://raw.githubusercontent.com/greatWeber/loadings/master/packages/assets/style/type-one-loading.less',
     }
   },
   mounted(){
