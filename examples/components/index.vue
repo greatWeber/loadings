@@ -74,6 +74,7 @@ header {
 
 .loading-animation {
   height: 100%;
+  transform-style: preserve-3d;
   .ball {
     display: block;
     width: 50*@baserem;
@@ -91,6 +92,7 @@ header {
     border-radius: 50%;
     background: #666;
     animation: shadows 2s linear infinite;
+    transform: translateZ(1px);
   }
 }
 
@@ -99,16 +101,20 @@ header {
     transform: translateY(0) scale(1);
   }
 
-  25% {
-    transform: translateY(-30*@baserem) scale( 0.8,1.2);
+  20% {
+    transform: translateY(-25*@baserem) scale( 0.8,1.2);
   }
 
-  50% {
+  40% {
     transform: translateY(-30*@baserem) scale(1);
   }
 
-  75% {
-    transform: translateY(50*@baserem) scale(1.2,0.8);
+  60% {
+    transform: translateY(50*@baserem) scale(0.8,1);
+  }
+
+  80% {
+    transform: translateY(60*@baserem) scale(1.2,0.8) translateZ(2px);
   }
 
   100% {
