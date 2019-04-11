@@ -3,20 +3,23 @@
     <load-head title="加载样式-02"></load-head>
 
     <h2 class="line" @click="change(1)">纯样式展示:</h2>
-    <div class="content" v-if="index==1" ref="code">
-      <div class="type-two-loading flex flex-colmun align-center">
-        <div class=" flex-item flex align-center">
-          <div class="type-two-loading__wrapper">
-            <p class="type-two-loading-p type-two-loading-p_1"></p>
-            <p class="type-two-loading-p type-two-loading-p_2"></p>
-            <p class="type-two-loading-p type-two-loading-p_3"></p>
-            <p class="type-two-loading-p type-two-loading-p_4"></p>
-            <p class="type-two-loading-p type-two-loading-p_5"></p>
+    <div class="content" v-if="index==1" >
+      <div ref="code">
+        <div class="type-two-loading flex flex-colmun align-center">
+          <div class=" flex-item flex align-center">
+            <div class="type-two-loading__wrapper">
+              <p class="type-two-loading-p type-two-loading-p_1"></p>
+              <p class="type-two-loading-p type-two-loading-p_2"></p>
+              <p class="type-two-loading-p type-two-loading-p_3"></p>
+              <p class="type-two-loading-p type-two-loading-p_4"></p>
+              <p class="type-two-loading-p type-two-loading-p_5"></p>
+            </div>
           </div>
+          <p class="type-two-loading__title flex-item flex align-center">
+            <span class="common-loading__span">加载中...</span>
+          </p>
         </div>
-        <p class="type-two-loading__title flex-item flex align-center">
-          <span class="common-loading__span">加载中...</span>
-        </p>
+
       </div>
 
       <!-- 拷贝 -->

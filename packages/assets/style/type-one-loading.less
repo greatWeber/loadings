@@ -40,7 +40,7 @@
   }
 
 
-  .loopLeft(@counter) when(@counter<=5){
+  .loopLeft(@counter) when(@counter<=3){
     .loopLeft(@counter+1);
     @animation: ~"1s linear infinite type-one-loading_@{counter}";
     .type-one-loading-p_@{counter} {
@@ -54,23 +54,23 @@
 
   .loopLeft(1);
 
-  .loopRight(@counter) when(@counter<=9){
+  .loopRight(@counter) when(@counter<=5){
     .loopRight(@counter+1);
     @animation: ~"1s linear infinite type-one-loading_@{counter}";
     .type-one-loading-p_@{counter} {
-      @height: (9-@counter+1)*5 + 10;
+      @height: (5-@counter+1)*5 + 10;
       height: @height*@baserem;
       transform: translateY(@height/2*@baserem);
       animation: @animation;
-      animation-delay: unit((@counter - 1)*(1/9),s)
+      animation-delay: unit((@counter - 1)*(1/5),s)
     }
   }
 
-  .loopRight(6);
+  .loopRight(4);
 
 }
 
-.animationLeft(@counter) when(@counter<=5){
+.animationLeft(@counter) when(@counter<=3){
   .animationLeft(@counter+1);
   @name : ~" type-one-loading_@{counter}";
 
@@ -96,27 +96,27 @@
 .animationLeft(1);
 
 
-.animationRight(@counter) when(@counter<=9){
+.animationRight(@counter) when(@counter<=5){
   .animationRight(@counter+1);
   @name : ~" type-one-loading_@{counter}";
 
   @keyframes @name {
     0% {
-      height: ((9-@counter+1)*5 + 10)*@baserem;
-      transform: translateY(((9-@counter+1)*5 + 10)/2*@baserem);
+      height: ((5-@counter+1)*5 + 10)*@baserem;
+      transform: translateY(((5-@counter+1)*5 + 10)/2*@baserem);
     }
 
   50% {
-    height: ((9-@counter+1)*15 + 10)*@baserem;
-    transform: translateY(((9-@counter+1)*15 + 10)/2*@baserem);
+    height: ((5-@counter+1)*15 + 10)*@baserem;
+    transform: translateY(((5-@counter+1)*15 + 10)/2*@baserem);
   }
 
 
     100% {
-      height: ((9-@counter+1)*5 + 10)*@baserem;
-      transform: translateY(((9-@counter+1)*5 + 10)/2*@baserem);
+      height: ((5-@counter+1)*5 + 10)*@baserem;
+      transform: translateY(((5-@counter+1)*5 + 10)/2*@baserem);
     }
   }
 }
 
-.animationRight(6);
+.animationRight(4);

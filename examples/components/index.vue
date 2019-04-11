@@ -1,7 +1,11 @@
 <template>
 <section>
-  <header class="flex align-center">
-    <span class="iconfont load-loading_ico "></span>
+  <header class="">
+    <!-- <span class="iconfont load-loading_ico "></span> -->
+    <div class="loading-animation">
+      <span class="ball"></span>
+      <span class="shadow"></span>
+    </div>
   </header>
   <section class="list-wrapper">
     <router-link class="list-item" :to="{ name: item.name }" v-for="(item,i) in list" :key="i">
@@ -32,13 +36,14 @@ export default {
 header {
   width: 100%;
   height: 200*@baserem;
+  border-top: 1px solid #fff;
 
-  span {
-    font-size: 50*@baserem;
-    margin: 0 auto;
-    animation: loading 1s linear infinite;
-    transform-origin: center center;
-  }
+  // span {
+  //   font-size: 50*@baserem;
+  //   margin: 0 auto;
+  //   animation: loading 1s linear infinite;
+  //   transform-origin: center center;
+  // }
 }
 
 .list-wrapper {
@@ -53,6 +58,7 @@ header {
     text-indent: 10*@baserem;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
+
   }
 }
 
@@ -63,6 +69,72 @@ header {
 
   from {
     transform: rotate(0deg);
+  }
+}
+
+.loading-animation {
+  height: 100%;
+  .ball {
+    display: block;
+    width: 50*@baserem;
+    height: 50*@baserem;
+    border-radius: 50%;
+    margin: 50*@baserem auto;
+    box-shadow: inset 0 0 30*@baserem #ccc;
+    animation: ball 2s linear infinite;
+  }
+  .shadow {
+    display: block;
+    width: 40*@baserem;
+    height: 15*@baserem;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: #666;
+    animation: shadows 2s linear infinite;
+  }
+}
+
+@keyframes ball {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  25% {
+    transform: translateY(-30*@baserem) scale( 0.8,1.2);
+  }
+
+  50% {
+    transform: translateY(-30*@baserem) scale(1);
+  }
+
+  75% {
+    transform: translateY(50*@baserem) scale(1.2,0.8);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes shadows {
+  0% {
+    transform:  scale(1);
+  }
+
+  25% {
+    transform: scale( 0.8);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 </style>

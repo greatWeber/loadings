@@ -3,24 +3,23 @@
     <load-head title="加载样式-01"></load-head>
 
     <h2 class="line" @click="change(1)">纯样式展示:</h2>
-    <div class="content" v-if="index==1" ref="code">
-      <div class="type-one-loading flex flex-colmun align-center">
-        <div class=" flex-item flex align-center">
-          <div class="type-one-loading__wrapper">
-            <p class="type-one-loading-p type-one-loading-p_1"></p>
-            <p class="type-one-loading-p type-one-loading-p_2"></p>
-            <p class="type-one-loading-p type-one-loading-p_3"></p>
-            <p class="type-one-loading-p type-one-loading-p_4"></p>
-            <p class="type-one-loading-p type-one-loading-p_5"></p>
-            <p class="type-one-loading-p type-one-loading-p_6"></p>
-            <p class="type-one-loading-p type-one-loading-p_7"></p>
-            <p class="type-one-loading-p type-one-loading-p_8"></p>
-            <p class="type-one-loading-p type-one-loading-p_9"></p>
+    <div class="content" v-if="index==1" >
+      <div ref="code">
+        <div class="type-one-loading flex flex-colmun align-center">
+          <div class=" flex-item flex align-center">
+            <div class="type-one-loading__wrapper">
+              <p class="type-one-loading-p type-one-loading-p_1"></p>
+              <p class="type-one-loading-p type-one-loading-p_2"></p>
+              <p class="type-one-loading-p type-one-loading-p_3"></p>
+              <p class="type-one-loading-p type-one-loading-p_4"></p>
+              <p class="type-one-loading-p type-one-loading-p_5"></p>
+            </div>
           </div>
+          <p class="type-one-loading__title flex-item flex align-center">
+            <span class="common-loading__span">加载中...</span>
+          </p>
         </div>
-        <p class="type-one-loading__title flex-item flex align-center">
-          <span class="common-loading__span">加载中...</span>
-        </p>
+
       </div>
 
       <!-- 拷贝 -->
